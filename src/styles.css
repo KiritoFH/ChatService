@@ -1,0 +1,51 @@
+:root {
+  --primary-bg: #FAF3DD;
+  --primary-text-color: #444;
+  --btn-primary-color: #AED9E0;
+  --btn-secondary-color: #B8F2E6;
+  /* --main-color: #FFA69E; */
+  --main-color: #f3d2c1;
+  --danger-color: #f53649;
+  --calendar-bg: #fcfbf1;
+  --light-gray: #dee2e6;
+
+  --primary-text-color-hover: #888;
+  --btn-primary-color-hover: #8bd3dd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Garamond, serif;
+  font-size: 18px;
+}
+
+html, body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text-color);
+}
+
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}

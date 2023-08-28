@@ -1,0 +1,27 @@
+<div class="container">
+  <div style="display: flex; padding: 10px;">
+    <label for="typeahead-focus">Search for a Service:</label>
+    <input 
+        id="typeahead-focus"
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchString"
+        [ngbTypeahead]="search"
+        (focus)="focus$.next($any($event).target.value)"
+        (click)="click$.next($any($event).target.value)"
+        #instance="ngbTypeahead"
+    />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; padding: 10px;">
+    <a class="card" *ngFor="let homeService of filteredHomeServiceList" style="width: calc(25% - 10px); margin: 5px"
+        routerLink="/search/{{homeService}}"
+    >
+        <img class="card-img-top" src="../../assets/images/services/test_image.jpeg" alt="haven't insert image">
+        <div class="card-body">
+            <p style="text-align: center; font-size: 1.1rem;">{{homeService}}</p>
+        </div>
+    </a>
+  </div>
+</div>
