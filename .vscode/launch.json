@@ -3,6 +3,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "WebSocketProjectApplication",
+      "request": "launch",
+      "mainClass": "WebSocket.WebSocketProjectApplication",
+      "projectName": "rehome"
+    },
+    {
+      "type": "java",
+      "name": "WebSocketProjectApplication",
+      "request": "launch",
+      "mainClass": "WebSocketProjectApplication",
+      "projectName": "rehome"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
