@@ -1,4 +1,4 @@
-package storage;
+package com.rehome.storage;
 
 import java.util.HashSet;
 import java.util.Set;

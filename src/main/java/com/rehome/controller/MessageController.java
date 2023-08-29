@@ -1,7 +1,7 @@
-package controller;
+package com.rehome.controller;
 
-import model.MessageModel;
-import storage.UserStorage;
+import com.rehome.model.MessageModel;
+import com.rehome.storage.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;

@@ -1,4 +1,4 @@
-package configuration;
+package com.rehome.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -17,6 +17,6 @@ public class WebsocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.setApplicationDestinationPrefixes("/apps").enableSimpleBroker("/topic");
+        registry.setApplicationDestinationPrefixes("/app").enableSimpleBroker("/topic");
     }
 }

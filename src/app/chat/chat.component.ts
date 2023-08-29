@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
+  // myScriptElement: HTMLScriptElement;
+  // constructor(){
+  //   this.myScriptElement = document.createElement("script");
+  //   this.myScriptElement.src = './src/app/chat/js/chat.js';
+  //   document.body.appendChild(this.myScriptElement);
+  // }
 
 }

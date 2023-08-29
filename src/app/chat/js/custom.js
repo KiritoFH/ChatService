@@ -74,5 +74,7 @@ function addMessageEnter(event) {
     }
 }
 
+
+
 init();
 

@@ -30,7 +30,10 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/chat/js/chat.js",
+              "src/app/chat/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +96,10 @@
               "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/chat/js/chat.js",
+              "src/app/chat/js/custom.js"
+            ]
           }
         }
       }

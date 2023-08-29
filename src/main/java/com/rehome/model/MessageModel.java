@@ -1,4 +1,4 @@
-package model;
+package com.rehome.model;
 
 public class MessageModel {
 
