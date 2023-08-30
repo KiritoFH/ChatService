@@ -7,8 +7,8 @@ function connectToChat(userName) {
     console.log("connecting to chat...")
     let socket = new SockJS(url + '/chat');
     stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
-        console.log("connected to: " + frame);
+    stompClient.connect({}, function (url) {
+        console.log("connected to: " + url);
         stompClient.subscribe("/topic/messages/" + userName, function (response) {
             let data = JSON.parse(response.body);
             if (selectedUser === data.fromLogin) {
@@ -21,9 +21,9 @@ function connectToChat(userName) {
     });
 }
 
-function sendMsg(from, text) {
+function sendMsg(text) {
     stompClient.send("/app/chat/" + selectedUser, {}, JSON.stringify({
-        fromLogin: from,
+        fromLogin: selectedUser, //from
         message: text
     }));
 }
@@ -57,7 +57,7 @@ function fetchAll() {
         let users = response;
         let usersTemplateHTML = "";
         for (let i = 0; i < users.length; i++) {
-            usersTemplateHTML = usersTemplateHTML + '<a href="#" onclick="selectUser(\'' + users[i] + '\')"; return false><li class="clearfix">\n' +
+            usersTemplateHTML = usersTemplateHTML + '<a href="#" onclick="selectUser(\'' + users[i] + '\')"><li class="clearfix">\n' +
                 '                <img src="../../assets/images/services/test_image.jpeg" width="55px" height="55px" alt="avatar" />\n' +
                 '                <div class="about">\n' +
                 '                    <div id="userNameAppender_' + users[i] + '" class="name">' + users[i] + '</div>\n' +

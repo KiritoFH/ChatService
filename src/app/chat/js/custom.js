@@ -21,8 +21,10 @@ function cacheDOM() {
 }
 
 function render(message, userName) {
-    scrollToBottom();
+    // console.log("RENDER 1");
+    // scrollToBottom();
     // responses
+    console.log("RENDER");
     var templateResponse = Handlebars.compile($("#message-response-template").html());
     var contextResponse = {
         response: message,
@@ -32,7 +34,7 @@ function render(message, userName) {
 
     setTimeout(function () {
         $chatHistoryList.append(templateResponse(contextResponse));
-        scrollToBottom();
+        // scrollToBottom();
     }.bind(this), 1500);
 }
 
@@ -40,7 +42,7 @@ function sendMessage(message) {
     let username = $('#userName').val();
     console.log(username)
     sendMsg(username, message);
-    scrollToBottom();
+    // scrollToBottom();
     if (message.trim() !== '') {
         var template = Handlebars.compile($("#message-template").html());
         var context = {
@@ -50,14 +52,14 @@ function sendMessage(message) {
         };
 
         $chatHistoryList.append(template(context));
-        scrollToBottom();
+        // scrollToBottom();
         $textarea.val('');
     }
 }
 
-function scrollToBottom() {
-    $chatHistory.scrollTop($chatHistory[0].scrollHeight);
-}
+// function scrollToBottom() {
+//     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
+// }
 
 function getCurrentTime() {
     return new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");

@@ -1,7 +1,7 @@
 <div class="container clearfix" style="width: 100%;">
     <div class="people-list" id="people-list">
         <div class="search">
-            <input id="userName" placeholder="search" type="text" value="DefaultUser" />
+            <input id="userName" placeholder="search" type="text" value="" />
             <button onclick="registration()">Enter New Chat</button>
             <button onclick="fetchAll()">Search</button>
         </div>
@@ -37,7 +37,7 @@
             <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
             <i class="fa fa-file-image-o"></i>
 
-            <button id="sendBtn">Send</button>
+            <button id="sendBtn" onclick="sendMsg('hi')">Send</button>
 
         </div> <!-- end chat-message -->
 
