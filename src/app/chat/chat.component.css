@@ -110,6 +110,7 @@ body {
 
 ul {
     list-style-type: none;
+    color:blue;
 }
 
 .chat .chat-history {

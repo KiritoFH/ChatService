@@ -19,6 +19,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SearchListingComponent } from './search/search-listing/search-listing.component';
 import { ProfileCardComponent } from './search/search-listing/profile-card/profile-card.component';
+import { UserMessageComponent } from './chat/user-message.component';
+import { ResponseMessageComponent } from './chat/response-message.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { ProfileCardComponent } from './search/search-listing/profile-card/profi
     RegisterComponent,
     SearchListingComponent,
     ProfileCardComponent,
+    ResponseMessageComponent,
+    UserMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { ProfileCardComponent } from './search/search-listing/profile-card/profi
     NgbModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
