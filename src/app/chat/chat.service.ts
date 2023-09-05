@@ -50,7 +50,14 @@ export class ChatService {
       to: to
     }));
     console.log('sendMsg(): ' + text);
+    // save to db (from, text, to, (seen/not seen))
   }
+  
+  // Enter the service fee by me
+
+  // Send accept / Reject service might be just me send noti
+
+  //Reschedule call yu hui
 
   registration(userName: string): Observable<any> {
     return this.http.get(`${this.url}/registration/${userName}`);
