@@ -1,7 +1,7 @@
-package com.rehome.controller;
+package com.rehome.chat.controller;
 
-import com.rehome.model.MessageModel;
-import com.rehome.storage.UserStorage;
+import com.rehome.chat.model.MessageModel;
+import com.rehome.chat.storage.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;

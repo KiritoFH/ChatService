@@ -1,4 +1,4 @@
-package com.rehome.configuration;
+package com.rehome.chat.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -13,7 +13,7 @@ public class WebsocketConfiguration implements WebSocketMessageBrokerConfigurer 
     // public void addCorsMappings(CorsRegistry registry) {
     //     registry.addMapping("/**").allowedOrigins("*");
     // }
-    
+
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat").setAllowedOriginPatterns("*").withSockJS();

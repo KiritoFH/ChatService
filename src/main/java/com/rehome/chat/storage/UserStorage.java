@@ -1,4 +1,4 @@
-package com.rehome.storage;
+package com.rehome.chat.storage;
 
 import java.util.HashSet;
 import java.util.Set;

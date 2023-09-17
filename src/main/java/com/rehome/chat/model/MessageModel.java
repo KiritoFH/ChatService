@@ -1,4 +1,4 @@
-package com.rehome.model;
+package com.rehome.chat.model;
 
 public class MessageModel {
 

@@ -1,6 +1,6 @@
 package com.rehome.controller;
 
-import com.rehome.storage.UserStorage;
+import com.rehome.chat.storage.UserStorage;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
