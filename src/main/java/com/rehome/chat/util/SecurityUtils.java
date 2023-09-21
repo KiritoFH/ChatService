@@ -1,6 +1,6 @@
 package com.rehome.chat.util;
 
-import com.rehome.chat.service.UserProfileServiceImpl;
+import com.rehome.chat.service.UserInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class SecurityUtils {
 
 	@Autowired
-    private UserProfileServiceImpl userProfileService;
+    private UserInfoServiceImpl userProfileService;
 
     public static boolean doesCurrentUserHaveAuthority(String authority) {
         SecurityContext securityContext = SecurityContextHolder.getContext();

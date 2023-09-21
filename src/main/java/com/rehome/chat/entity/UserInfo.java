@@ -14,24 +14,15 @@ import javax.validation.constraints.Size;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(
-    name = "services",
-    uniqueConstraints = {
-        @UniqueConstraint(columnNames = "name")
-    }
-)
-public class Services {
-	@Id
+
+public class UserInfo {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
     @NotBlank
     @Size(max = 36)
-    @Column(name = "name")
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "parent_service_id")
-    private Services parentService;
+    @Column(name = "username")
+    private String username;
 }
