@@ -2,7 +2,6 @@ package com.rehome.chat.controller;
 
 import com.rehome.chat.entity.Chat;
 import com.rehome.chat.model.MessageModel;
-import com.rehome.chat.repository.ChatRepository;
 import com.rehome.chat.service.ChatService;
 import com.rehome.chat.storage.UserStorage;
 import lombok.extern.slf4j.Slf4j;
@@ -31,8 +30,8 @@ public class MessageController {
     @Autowired
     ChatService chatService;
 
-    @Autowired
-    ChatRepository chatRepository;
+//    @Autowired
+//    ChatRepository chatRepository;
 
   @GetMapping("/ping")
   public String ping() {

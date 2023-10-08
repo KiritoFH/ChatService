@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class ServiceFee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

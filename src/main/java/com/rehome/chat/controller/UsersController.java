@@ -1,4 +1,4 @@
-package com.rehome.controller;
+package com.rehome.chat.controller;
 
 import com.rehome.chat.storage.UserStorage;
 import org.springframework.http.ResponseEntity;

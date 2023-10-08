@@ -14,7 +14,6 @@ import javax.validation.constraints.Size;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class UserInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
