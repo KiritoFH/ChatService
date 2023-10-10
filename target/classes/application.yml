@@ -1,6 +1,11 @@
 server:
   port: 8103
+  error:
+    include-message: always
 
+# To access db: http://localhost:8103/h2-console/
+# JDBC Url: jdbc:h2:./db/chat
+# Username: chat
 spring:
   h2:
     console:
