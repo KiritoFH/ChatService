@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -41,6 +42,7 @@ public class SecurityConfiguration {
             .authorizeHttpRequests()
             .requestMatchers(new AntPathRequestMatcher(H2_CONSOLE_PATH + "/**")).permitAll() // TODO Will probably see "Unauthorized error" in the logs, ignore that for now, it won't be a concern once we shift our db to aws
 //            .anyRequest().permitAll();
+//            .requestMatchers(new AntPathRequestMatcher("/chat/info", HttpMethod.GET.name())).permitAll()
             .anyRequest().authenticated();
 
         http.headers().frameOptions().sameOrigin(); // TODO Will be removed once we stop using H2 db
