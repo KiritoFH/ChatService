@@ -11,10 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -29,6 +26,7 @@ public class MessageController {
 
     @Autowired
     ChatService chatService;
+
 
 //    @Autowired
 //    ChatRepository chatRepository;
@@ -50,7 +48,6 @@ public class MessageController {
     return ResponseEntity.ok().body(handyChats);
   }
 
-
   @MessageMapping("/chat/{to}")
   public void sendMessage(@DestinationVariable String to, MessageModel message) {
       System.out.println("handling send message: " + message + " to: " + to);
@@ -59,4 +56,11 @@ public class MessageController {
           simpMessagingTemplate.convertAndSend("/topic/messages/" + to, message);
       }
   }
+
+  @PostMapping("/chat/{appointmentId}/{from}/{to}")
+  public ResponseEntity<Chat> sendChatToDB(@PathVariable("appointmentId") Long appointmentId, @PathVariable("from") Long from, @PathVariable("to") Long to, @RequestBody String content) {
+    Chat createdChat = chatService.createNewChat(appointmentId, from, to, content);
+    return ResponseEntity.status(HttpStatus.CREATED).body(createdChat);
+  }
+
 }
