@@ -1,5 +1,7 @@
 package com.rehome.chat.controller;
 
+import com.rehome.chat.configuration.ModelMapperConfiguration;
+import com.rehome.chat.dto.ChatResponse;
 import com.rehome.chat.entity.Chat;
 import com.rehome.chat.model.MessageModel;
 import com.rehome.chat.service.ChatService;
@@ -27,7 +29,8 @@ public class MessageController {
     @Autowired
     ChatService chatService;
 
-
+    @Autowired
+    ModelMapperConfiguration modelMapperConfiguration;
 //    @Autowired
 //    ChatRepository chatRepository;
 
@@ -38,7 +41,7 @@ public class MessageController {
     return response;
   }
 
-  @GetMapping("/chat/{appointmentId}")
+  @GetMapping("/getchat/{appointmentId}")
   public ResponseEntity<List<Chat>> getAllChatForAppointmentID(@PathVariable("appointmentId") Long appointmentId) {
     if (appointmentId == null || appointmentId < 0) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Appointment ID");
@@ -48,7 +51,7 @@ public class MessageController {
     return ResponseEntity.ok().body(handyChats);
   }
 
-  @MessageMapping("/chat/{to}")
+  @MessageMapping("/{to}")
   public void sendMessage(@DestinationVariable String to, MessageModel message) {
       System.out.println("handling send message: " + message + " to: " + to);
       boolean isExists = UserStorage.getInstance().getUsers().contains(to);
@@ -57,9 +60,11 @@ public class MessageController {
       }
   }
 
-  @PostMapping("/chat/{appointmentId}/{from}/{to}")
-  public ResponseEntity<Chat> sendChatToDB(@PathVariable("appointmentId") Long appointmentId, @PathVariable("from") Long from, @PathVariable("to") Long to, @RequestBody String content) {
-    Chat createdChat = chatService.createNewChat(appointmentId, from, to, content);
+  @PostMapping("/new")
+  public ResponseEntity<Chat> sendChatToDB(@RequestBody ChatResponse chat) {
+    Chat createdChat = chatService.createNewChat(
+      this.modelMapperConfiguration.modelMapper().map(chat, Chat.class)
+    );
     return ResponseEntity.status(HttpStatus.CREATED).body(createdChat);
   }
 

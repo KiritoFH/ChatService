@@ -3,7 +3,6 @@ package com.rehome.chat.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,18 +18,15 @@ public class Chat {
     @Column(name = "id")
     private Long chatId;
 
-    @NotBlank
     @Column(name = "sender_id")
     private Long senderId;
 
-    @NotBlank
     @Column(name = "receiver_id")
     private Long receiverId;
 
     @Column(name = "message")
     private String message;
 
-    @NotBlank
     @Column(name = "appointment_id")
     private Long appointmentId;
 
