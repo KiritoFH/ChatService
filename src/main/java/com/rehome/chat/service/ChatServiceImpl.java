@@ -18,7 +18,7 @@ public class ChatServiceImpl implements ChatService {
   }
 
   public Chat createNewChat(Chat chat) {
-    if (null == chat.getReceiverId() ||null == chat.getSenderId() ) {
+    if (null == chat.getReceiverId() || null == chat.getSenderId() ) {
       throw new ChatBadRequestException("Chat cannot be created as mandatory fields missing");
     }
     return chatRepository.save(chat);

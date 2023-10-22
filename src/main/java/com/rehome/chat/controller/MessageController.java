@@ -42,13 +42,13 @@ public class MessageController {
   }
 
   @GetMapping("/getchat/{appointmentId}")
-  public ResponseEntity<List<Chat>> getAllChatForAppointmentID(@PathVariable("appointmentId") Long appointmentId) {
+  public ResponseEntity<List<Chat>> getChatFromDB(@PathVariable("appointmentId") Long appointmentId) {
     if (appointmentId == null || appointmentId < 0) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Appointment ID");
     }
 
-    List<Chat> handyChats = chatService.getAllChatForAppointmentId(appointmentId);
-    return ResponseEntity.ok().body(handyChats);
+    List<Chat> displayChat = chatService.getAllChatForAppointmentId(appointmentId);
+    return ResponseEntity.ok().body(displayChat);
   }
 
   @MessageMapping("/{to}")
