@@ -25,7 +25,7 @@ public class WebSecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:4200", "http://rehome-alb-1349313534.ap-southeast-1.elb.amazonaws.com", "http://rehome-alb-1349313534.ap-southeast-1.elb.amazonaws.com/[", "http://rehome.com"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:4200", "http://rehome-alb-130132440.ap-southeast-1.elb.amazonaws.com", "http://rehome-alb-130132440.ap-southeast-1.elb.amazonaws.com/", "http://rehome.com"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST", "DELETE"));
         configuration.setAllowCredentials(true);
         configuration.setExposedHeaders(Arrays.asList("Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key", "X-Amz-Security-Token"));
