@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://auth-database.cr4iybddanga.ap-southeast-1.rds.amazonaws.com:3306/chat?useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true
+    username: admin
+    password: KhcRG918
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  name: rehome_jwt
+  secret: a13fef8da9c9569e30bbe2aea7fb8cdaa534e14f70c9a10928a91d1be9c11a723f7d273efa22fdf254b7aeb646be1abf97f73d1bc3ebc0d03164adc21ac1e537
+  expirationSeconds: 86400 # 24 hours (60 * 60 * 24)

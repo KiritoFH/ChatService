@@ -10,11 +10,12 @@
   </parent>
   <groupId>com.rehome</groupId>
   <artifactId>chat</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>latestchat</version>
   <name>chat</name>
   <description>Chat Microservice for RE:HOME</description>
   <properties>
     <java.version>11</java.version>
+    <docker.image.prefix>rehomeecr</docker.image.prefix>
   </properties>
   <dependencies>
     <dependency>
@@ -102,6 +103,28 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>1.4.12</version>
+        <executions>
+          <execution>
+            <id>default</id>
+            <goals>
+              <goal>build</goal>
+              <goal>push</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <repository>${docker.image.prefix}/aws</repository>
+          <tag>${project.version}</tag>
+          <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+          </buildArgs>
+        </configuration>
       </plugin>
     </plugins>
   </build>
