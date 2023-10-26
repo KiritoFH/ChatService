@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+#spring:
+#  h2:
+#    console:
+#      path: /h2-console
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:file:./db/chat
+#    driverClassName: org.h2.Driver
+#    username: chat
+#    password:
+#  jpa:
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+
+jwt:
+  name: rehome_jwt
+  secret: a13fef8da9c9569e30bbe2aea7fb8cdaa534e14f70c9a10928a91d1be9c11a723f7d273efa22fdf254b7aeb646be1abf97f73d1bc3ebc0d03164adc21ac1e537
+  expirationSeconds: 86400 # 24 hours (60 * 60 * 24)
